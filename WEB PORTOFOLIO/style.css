@@ -1,0 +1,204 @@
+/* ==============================================================
+   FILE: style.css
+   DESKRIPSI: 
+   File ini menggunakan External CSS (CSS Eksternal) untuk memisahkan
+   kode gaya dan desain dasar dari kerangka beranda HTML. Memudahkan
+   pemeliharaan kode dan membuat file HTML jauh lebih bersih.
+============================================================== */
+
+* {
+    box-sizing: border-box; 
+}
+
+h1, h2, h3, p {
+    margin-top: 0; 
+}
+
+/* -- HEADER & NAVBAR -- */
+header {
+    background-color: rgba(15, 23, 42, 0.85); /* Tema Gelap Modern dengan transparansi */
+    backdrop-filter: blur(12px); /* Efek Glassmorphism */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 250px; /* Lebar sidebar navigasi di kiri */
+    height: 100vh; /* Tinggi penuh satu layar */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3); 
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex; 
+    flex-direction: column; /* Mengubah arah menjadi vertikal */
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 40px 20px;
+    height: 100%;
+}
+
+.navbar .logo {
+    color: #ffffff; 
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #0ea5e9, #14b8a6); /* Gradasi warna modern */
+    -webkit-background-clip: text; /* Untuk Safari/Chrome lama */
+    background-clip: text;         /* Standard property untuk kompatibilitas semua browser */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback standar */
+}
+
+.nav-links {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    flex-direction: column; /* Susunan menu vertikal */
+    gap: 20px; 
+    width: 100%;
+}
+
+.nav-links li a {
+    color: #cbd5e1;
+    text-decoration: none; 
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease; 
+    display: block;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: #ffffff; 
+    background-color: rgba(14, 165, 233, 0.2); /* Efek background transparan saat disorot / aktif */
+    transform: translateX(5px); /* Efek geser kanan */
+}
+
+/* -- AREA KONTEN UTAMA (TERPUSAT) -- */
+main {
+    max-width: 850px; 
+    margin: 60px auto; /* Margin lega agar box tidak terlalu mepet header/footer */
+    background: rgba(15, 23, 42, 0.40); /* Lebih transparan - background gambar lebih terlihat */
+    backdrop-filter: blur(10px); /* Efek blur lebih ringan agar foto belakang tetap nampak */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Bayangan melayang yang sangat mulus */
+    padding: 50px;
+    border-radius: 20px; /* Sudut lebih melengkung agar terlihat empuk */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Garis tepi lebih cerah agar kaca terlihat jelas */
+    color: #e2e8f0; /* Warna teks keperakan yang sangat pas dibaca bersama latar belakang gelap */
+    line-height: 1.7; /* Jarak spasi paragraf lebih luas agar rapi */
+}
+
+/* -- BAGIAN ATAS KONTEN (HERO SECTION) -- */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; 
+    border: 4px solid #0ea5e9; /* Menggunakan ungu/indigo kebiruan modern */
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+    object-fit: cover; 
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Sedikit membesar saat disorot */
+}
+
+.text-highlight {
+    background: linear-gradient(90deg, #0ea5e9, #14b8a6); /* Efek teks gradasi */
+    -webkit-background-clip: text; /* Untuk Safari/Chrome lama */
+    background-clip: text;         /* Standard property untuk kompatibilitas semua browser */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback standar */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #0ea5e9, #0284c7); /* Tombol modern dengan gradasi */
+    color: #ffffff;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 30px; 
+    font-weight: 600;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* Naik sedikit saat disorot */
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.6); 
+}
+
+/* -- KONTEN SECTION (TENTANG & PENGALAMAN) -- */
+.content-section {
+    padding: 20px 0;
+}
+
+.section-title {
+    color: #ffffff;
+    border-bottom: 3px solid #0284c7; /* Aksen garis bawah ungu modern */
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    display: inline-block; 
+}
+
+.skills-list {
+    margin-left: 20px;
+    color: #e2e8f0; 
+    line-height: 1.8; 
+}
+
+/* -- DESAIN TABEL -- */
+.experience-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px; /* Tepi lengkung pada tabel */
+    overflow: hidden; /* Mencegah ujung kotak kaku */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background-color: rgba(255, 255, 255, 0.03); /* Latar transparan sangat tipis untuk bedakan dengan background main */
+}
+
+.experience-table th, 
+.experience-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis sangat tipis pemisah mendatar */
+    color: #e2e8f0;
+}
+
+.experience-table th {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7); /* Gradasi pada kepala tabel yang sangat mewah */
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.experience-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02); /* Selang - seling baris halus */
+}
+.experience-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.08); /* Aksen sorot ketika disentuh kursor */
+}
+
+/* -- FOOTER -- */
+footer {
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-size: 14px;
+}
